@@ -71,131 +71,6 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-git-use" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/25/git-use/" class="article-date">
-  <time datetime="2016-01-25T08:35:34.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/25/git-use/">gitʹ�÷���</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>git init                                                  # ��ʼ������git�ֿ⣨�����²ֿ⣩</p>
-<p>git config –global user.name “xxx”                       # �����û���</p>
-<p>git config –global user.email “xxx@xxx.com”              # �����ʼ�</p>
-<p>git config –global color.ui true                         # git status�������Զ���ɫ</p>
-<p>git config –global color.status auto</p>
-<p>git config –global color.diff auto</p>
-<p>git config –global color.branch auto</p>
-<p>git config –global color.interactive auto</p>
-<p>git clone git+ssh://git@192.168.53.168/VT.git             # cloneԶ�ֿ̲�</p>
-<p>git status                                                # �鿴��ǰ�汾״̬���Ƿ��޸ģ�</p>
-<p>git add xyz                                               # ����xyz�ļ���index</p>
-<p>git add .                                                 # ���ӵ�ǰ��Ŀ¼�����и��Ĺ����ļ���index</p>
-<p>git commit -m ‘xxx’                                       # �ύ</p>
-<p>git commit –amend -m ‘xxx’                               # �ϲ���һ���ύ�����ڷ����޸ģ�</p>
-<p>git commit -am ‘xxx’                                      # ��add��commit��Ϊһ��</p>
-<p>git rm xxx                                                # ɾ��index�е��ļ�</p>
-<p>git rm -r *                                               # �ݹ�ɾ��</p>
-<p>git log                                                   # ��ʾ�ύ��־</p>
-<p>git log -1                                                # ��ʾ1����־ -nΪn��</p>
-<p>git log -5</p>
-<p>git log –stat                                            # ��ʾ�ύ��־�����ر䶯�ļ�</p>
-<p>git log -p -m</p>
-<p>git show 344bcd                                            # ��ֻ��commitid��ǰ��λ</p>
-<p>git show HEAD                                             # ��ʾHEAD�ύ��־</p>
-<p>git show HEAD^                                            # ��ʾHEAD�ĸ�����һ���汾�����ύ��־ ^^Ϊ�������汾 ^5Ϊ��5���汾</p>
-<p>git tag                                                   # ��ʾ�Ѵ��ڵ�tag</p>
-<p>git tag -a v2.0 -m ‘xxx’                                  # ����v2.0��tag</p>
-<p>git show v2.0                                             # ��ʾv2.0����־����ϸ����</p>
-<p>git log v2.0                                              # ��ʾv2.0����־</p>
-<p>git diff                                                  # ��ʾ����δ������index�ı���</p>
-<p>git diff –cached                                         # ��ʾ����������index����δcommit�ı���</p>
-<p>git diff HEAD^                                            # �Ƚ�����һ���汾�Ĳ���</p>
-<p>git diff HEAD – ./lib                                    # �Ƚ���HEAD�汾libĿ¼�Ĳ���</p>
-<p>git diff origin/master..master                            # �Ƚ�Զ�̷�֧master���б��ط�֧master��û�е�</p>
-<p>git diff origin/master..master –stat                     # ֻ��ʾ�������ļ�������ʾ��������</p>
-<p>git remote add origin git+ssh://git@192.168.53.168/VT.git # ����Զ�̶��壨����push/pull/fetch��</p>
-<p>git branch                                                # ��ʾ���ط�֧</p>
-<p>git branch –contains 50089                               # ��ʾ�����ύ50089�ķ�֧</p>
-<p>git branch -a                                             # ��ʾ���з�֧</p>
-<p>git branch -r                                             # ��ʾ����ԭ����֧</p>
-<p>git branch –merged                                       # ��ʾ�����Ѻϲ�����ǰ��֧�ķ�֧</p>
-<p>git branch –no-merged                                    # ��ʾ����δ�ϲ�����ǰ��֧�ķ�֧</p>
-<p>git branch -m master master_copy                          # ���ط�֧����</p>
-<p>git checkout -b master_copy                               # �ӵ�ǰ��֧�����·�֧master_copy������</p>
-<p>git checkout -b master master_copy                        # ������������</p>
-<p>git checkout features/performance                         # �����Ѵ��ڵ�features/performance��֧</p>
-<p>git checkout –track hotfixes/BJVEP933                    # ����Զ�̷�֧hotfixes/BJVEP933���������ظ��ٷ�֧</p>
-<p>git checkout v2.0                                         # �����汾v2.0</p>
-<p>git checkout -b devel origin/develop                      # ��Զ�̷�֧develop�����±��ط�֧devel������</p>
-<p>git checkout – README                                    # ����head�汾��README�ļ����������޸Ĵ������ˣ�</p>
-<p>git merge origin/master                                   # �ϲ�Զ��master��֧����ǰ��֧</p>
-<p>git cherry-pick ff44785404a8e                             # �ϲ��ύff44785404a8e���޸�</p>
-<p>git push origin master                                    # ����ǰ��֧push��Զ��master��֧</p>
-<p>git push origin :hotfixes/BJVEP933                        # ɾ��Զ�ֿ̲���hotfixes/BJVEP933��֧</p>
-<p>git push –tags                                           # ������tag���͵�Զ�ֿ̲�</p>
-<p>git fetch                                                 # ��ȡ����Զ�̷�֧�������±��ط�֧������merge��</p>
-<p>git fetch –prune                                         # ��ȡ����ԭ����֧����������������ɾ���ķ�֧</p>
-<p>git pull origin master                                    # ��ȡԶ�̷�֧master��merge����ǰ��֧</p>
-<p>git mv README README2                                     # �������ļ�READMEΪREADME2</p>
-<p>git reset –hard HEAD                                     # ����ǰ�汾����ΪHEAD��ͨ������mergeʧ�ܻ��ˣ�</p>
-<p>git rebase</p>
-<p>git branch -d hot/344bcd                                  # ɾ����֧hot/344bcd������֧�޸��Ѻϲ���������֧��</p>
-<p>git branch -D hot/344bcd                                  # ǿ��ɾ����֧hot/344bcd</p>
-<p>git ls-files                                              # �г�git index�������ļ�</p>
-<p>git show-branch                                           # ͼʾ��ǰ��֧��ʷ</p>
-<p>git show-branch –all                                     # ͼʾ���з�֧��ʷ</p>
-<p>git whatchanged                                           # ��ʾ�ύ��ʷ��Ӧ���ļ��޸�</p>
-<p>git revert 344bcd                                         # �����ύ344bcd</p>
-<p>git ls-tree HEAD                                          # �ڲ������ʾĳ��git����</p>
-<p>git rev-parse v2.0                                        # �ڲ������ʾĳ��ref���ڵ�SHA1 HASH</p>
-<p>git reflog                                                # ��ʾ�����ύ�����������ڵ�</p>
-<p>git show HEAD@{5}</p>
-<p>git show master@{yesterday}                               # ��ʾmaster��֧������״̬</p>
-<p>git log –pretty=format:’%h %s’ –graph                   # ͼʾ�ύ��־</p>
-<p>git show HEAD~3</p>
-<p>git show -s –pretty=raw 2be7fcb476<br>git stash                                                 # �ݴ浱ǰ�޸ģ���������ΪHEAD״̬</p>
-<p>git stash list                                            # �鿴�����ݴ�</p>
-<p>git stash show -p stash@{0}                               # �ο���һ���ݴ�</p>
-<p>git stash apply stash@{0}                                 # Ӧ�õ�һ���ݴ�</p>
-<p>git grep “delete from”                                    # �ļ��������ı���delete from��</p>
-<p>git grep -e ‘#define’ –and -e SORT_DIRENT</p>
-<p>git gc</p>
-<p>git fsck</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2016/01/25/git-use/" data-id="cijtqbedn0000ngqoh5ooc3gy" class="article-share-link" data-share="baidu" data-title="gitʹ�÷���">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/19/test/" class="article-date">
@@ -233,7 +108,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/01/19/test/" data-id="cijtqahd90001z4qo66ixnror" class="article-share-link" data-share="baidu" data-title="理想与离乡">分享到</a>
+        <a data-url="http://yoursite.com/2016/01/19/test/" data-id="cijtqljgw0004rgqo56ggw1do" class="article-share-link" data-share="baidu" data-title="理想与离乡">分享到</a>
       
 
       
@@ -276,7 +151,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/01/19/my-new-post/" data-id="cijtqahdk0004z4qo7qoax8k3" class="article-share-link" data-share="baidu" data-title="那些有的过去，已经是没了的现在">分享到</a>
+        <a data-url="http://yoursite.com/2016/01/19/my-new-post/" data-id="cijtqljga0000rgqo9tpes22h" class="article-share-link" data-share="baidu" data-title="那些有的过去，已经是没了的现在">分享到</a>
       
 
       
@@ -302,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章/">文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/诗歌/">诗歌</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章/">文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/诗歌/">诗歌</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -311,7 +186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/文章/" style="font-size: 10px;">文章</a> <a href="/tags/诗歌/" style="font-size: 10px;">诗歌</a>
+      <a href="/tags/文章/" style="font-size: 10px;">文章</a> <a href="/tags/诗歌/" style="font-size: 10px;">诗歌</a>
     </div>
   </div>
 
@@ -320,7 +195,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -330,10 +205,6 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2016/01/25/git-use/">gitʹ�÷���</a>
-          </li>
         
           <li>
             <a href="/2016/01/19/test/">理想与离乡</a>
